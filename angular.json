@@ -1,6 +1,6 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
-  "version": 1, 
+  "version": 1,
   "newProjectRoot": "projects",
   "projects": {
     "furama-front-end": {
@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "furama-front-end"
+    }
+  },
+  "defaultProject": "furama-front-end",
+  "cli": {
+    "analytics": "4fcfdefa-530a-4b22-8f4d-1ce7a1ccbd69"
+  }
 }
