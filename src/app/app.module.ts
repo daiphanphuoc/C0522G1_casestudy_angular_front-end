@@ -13,6 +13,10 @@ import { FacilityNewFormComponent } from './facility-new-form/facility-new-form.
 import { FacilityNewModalComponent } from './facility-new-modal/facility-new-modal.component';
 import { MessageSuccessModalComponent } from './message-success-modal/message-success-modal.component';
 import { MessageFailModalComponent } from './message-fail-modal/message-fail-modal.component';
+import { CustomerNewComponent } from './customer-new/customer-new.component';
+import { CustomerListComponent } from './customer-list/customer-list.component';
+import { CustomerUpdateComponent } from './customer-update/customer-update.component';
+import {FormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -27,10 +31,14 @@ import { MessageFailModalComponent } from './message-fail-modal/message-fail-mod
     FacilityNewFormComponent,
     FacilityNewModalComponent,
     MessageSuccessModalComponent,
-    MessageFailModalComponent
+    MessageFailModalComponent,
+    CustomerNewComponent,
+    CustomerListComponent,
+    CustomerUpdateComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

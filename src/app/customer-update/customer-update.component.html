@@ -1,0 +1,117 @@
+<div class="row">
+  <h3 class="text-center">CẬP NHẬT KHÁCH HÀNG</h3>
+  <div class="d-flex justify-content-center">
+    <form class="w-50 border border-2 border-success p-3 rounded"
+          action="/customer/update"
+          object="${customerDto}" method="POST" novalidate="novalidate">
+
+      <div class="form-group">
+        <input [(ngModel)]="customer.id">
+        <label for="nameUpdate" class="h6">Tên khách hàng:</label>
+        <!--                        <p style="color: red" th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></p>-->
+        <div class="input-group">
+
+          <input type="text" id="nameUpdate" class="form-control"
+                 placeholder="Nhập tên khách hàng.."
+                 value="*{name}"/>
+          <span class="input-group-text"><i
+            class="fa-solid fa-person-circle-question"></i></span>
+        </div>
+      </div>
+
+      <div class="mt-3 form-group">
+        <label for="dateOfBirthUpdate" class="h6">Ngày sinh:</label>
+        <!--<p style="color: red" th:if="${#fields.hasErrors('birthday')}"
+           th:errors="*{birthday}"></p>-->
+        <input type="date" id="dateOfBirthUpdate" class="form-control" value="*{birthday}"
+        />
+      </div>
+
+      <div class="mt-3 form-group">
+        <label class="h6">Giới tính:</label>
+        <!--  <p style="color: red" th:if="${#fields.hasErrors('sex')}"
+             th:errors="*{sex}"></p>-->
+      </div>
+      <div class="d-flex">
+        <label class="d-block me-4">
+          <input type="radio"  value="1"/> Nam
+          <i class="fa-solid fa-mars"></i>
+        </label>
+
+        <label class="d-block me-4">
+          <input type="radio"  value="0"/> Nữ
+          <i class="fa-solid fa-venus"></i>
+        </label>
+
+
+      </div>
+
+      <div class="mt-3 form-group">
+        <label for="idCardUpdate" class="h6">Số CMND/CCCD:</label>
+        <!--<p style="color: red" th:if="${#fields.hasErrors('idCitizen')}"
+           th:errors="*{idCitizen}"></p>
+        <p style="color: red" th:if="${duplicateIdCitizen}"
+           th:text="${duplicateIdCitizen}"></p>-->
+        <div class="input-group">
+          <input type="text" id="idCardUpdate" class="form-control"
+                 placeholder="Nhập số CMND/CCCD.."
+                 value="*{idCitizen}"/>
+          <span class="input-group-text"><i class="fa-solid fa-id-card"></i></span>
+        </div>
+      </div>
+
+      <div class="mt-3 form-group">
+        <label for="phoneUpdate" class="h6">Số điện thoại:</label>
+        <!--<p style="color: red" th:if="${#fields.hasErrors('phone')}"
+           th:errors="*{phone}"></p>-->
+        <div class="input-group">
+          <input type="text" id="phoneUpdate" class="form-control" placeholder="Nhập SĐT.."
+                 value="*{phone}"/>
+          <span class="input-group-text"><i class="fa-solid fa-square-phone"></i></span>
+        </div>
+      </div>
+
+      <div class="mt-3 form-group">
+        <label for="emailUpdate" class="h6">Email:</label>
+        <!--  <p style="color: red" th:if="${#fields.hasErrors('email')}"
+             th:errors="*{email}"></p>-->
+        <div class="input-group">
+          <input type="text" id="emailUpdate" class="form-control" placeholder="Nhập email.."
+                 value="*{email}"/>
+          <span class="input-group-text"><i
+            class="fa-solid fa-envelope-circle-check"></i></span>
+        </div>
+      </div>
+
+      <div class="mt-3 form-group">
+        <label for="addressUpdate" class="h6">Địa chỉ:</label>
+        <!-- <p style="color: red" th:if="${#fields.hasErrors('address')}"
+            th:errors="*{address}"></p>-->
+        <div class="input-group">
+          <input type="text" id="addressUpdate" class="form-control"
+                 placeholder="Nhập địa chỉ.."/>
+          <span class="input-group-text"><i
+            class="fa-solid fa-map-location-dot"></i></span>
+        </div>
+      </div>
+
+      <div class="mt-3 form-group">
+        <label class="h6" for="customerTypeUpdate">Loại khách:</label>
+        <div class="input-group">
+          <select id="customerTypeUpdate" class="form-select" >
+            <option>Member</option>
+            <option>Siver</option>
+          </select>
+          <span class="input-group-text"><i class="fa-solid fa-ranking-star"></i></span>
+        </div>
+      </div>
+
+      <div class="mt-3 text-center">
+        <button class="btn btn-info btn-outline-success btn-sm border border-2 border-success text-dark">
+          Lưu <i class="fa-solid fa-floppy-disk"></i>
+        </button>
+      </div>
+    </form>
+  </div>
+
+</div>
