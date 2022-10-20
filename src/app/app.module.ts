@@ -17,6 +17,8 @@ import { CustomerNewComponent } from './customer-new/customer-new.component';
 import { CustomerListComponent } from './customer-list/customer-list.component';
 import { CustomerUpdateComponent } from './customer-update/customer-update.component';
 import {FormsModule} from '@angular/forms';
+import { ContractNewComponent } from './contract-new/contract-new.component';
+import { ContractListComponent } from './contract-list/contract-list.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +36,9 @@ import {FormsModule} from '@angular/forms';
     MessageFailModalComponent,
     CustomerNewComponent,
     CustomerListComponent,
-    CustomerUpdateComponent
+    CustomerUpdateComponent,
+    ContractNewComponent,
+    ContractListComponent
   ],
   imports: [
     BrowserModule,
