@@ -1,59 +1,59 @@
 <div class="row d-flex" >
-<div style="margin-top: 40px" class="col-3 ">
-  <div class="card shadow" style="width: 100%">
-    <div class="ratio ratio-16x9">
-      <img src="https://cdn.vntrip.vn/cam-nang/wp-content/uploads/2018/06/the-ocean-villas-da-nang-vntrip2-e1529553936964.jpg"
-           class="card-img-top" alt="hinh_anh/hinh 6.1.jpg">
-    </div>
-    <div class="card-body">
-      <p style="font-size: 25px" class="card-text">Sun Peninsula Resort</p>
-      <p> Địa chỉ: 64 Lê Mạnh Trinh, phường Phước Mỹ, quận Sơn Trà, thành phố Đà Nẵng</p>
-    </div>
-    <div class="card-footer">
-      <a href="#">
-        <button class="btn btn-warning">Sửa</button>
-      </a>
-      <a href="#" data-bs-toggle="modal"
-         data-bs-target="#deleteFacility">
-        <button class="btn btn-danger">Xóa</button>
-      </a>
+  <!--<div style="margin-top: 40px" class="col-3 ">
+    <div class="card shadow" style="width: 100%">
+      <div class="ratio ratio-16x9">
+        <img src="https://cdn.vntrip.vn/cam-nang/wp-content/uploads/2018/06/the-ocean-villas-da-nang-vntrip2-e1529553936964.jpg"
+             class="card-img-top" alt="hinh_anh/hinh 6.1.jpg">
+      </div>
+      <div class="card-body">
+        <p style="font-size: 25px" class="card-text">Sun Peninsula Resort</p>
+        <p> Địa chỉ: 64 Lê Mạnh Trinh, phường Phước Mỹ, quận Sơn Trà, thành phố Đà Nẵng</p>
+      </div>
+      <div class="card-footer">
+        <a href="#">
+          <button class="btn btn-warning">Sửa</button>
+        </a>
+        <a href="#" data-bs-toggle="modal"
+           data-bs-target="#deleteFacility">
+          <button class="btn btn-danger">Xóa</button>
+        </a>
+      </div>
     </div>
   </div>
-</div>
-<div style="margin-top: 40px" class="col-3 ">
-  <div class="card shadow" style="width: 100%">
-    <div class="ratio ratio-16x9">
-      <img src="https://cdn.vntrip.vn/cam-nang/wp-content/uploads/2018/06/khu-nghi-duong-intercontinental-danang-sun-peninsula-vntrip1-e1529553680391.jpg"
-           class="card-img-top" alt="">
-    </div>
-    <div class="card-body">
-      <p style="font-size: 25px" class="card-text">Premier Village Resort</p>
-      <p> Địa chỉ: 64 Lê Mạnh Trinh, phường Phước Mỹ, quận Sơn Trà, thành phố Đà Nẵng</p>
-    </div>
-    <div class="card-footer">
-      <a href="#">
-        <button class="btn btn-warning">Sửa</button>
-      </a>
+  <div style="margin-top: 40px" class="col-3 ">
+    <div class="card shadow" style="width: 100%">
+      <div class="ratio ratio-16x9">
+        <img src="https://cdn.vntrip.vn/cam-nang/wp-content/uploads/2018/06/khu-nghi-duong-intercontinental-danang-sun-peninsula-vntrip1-e1529553680391.jpg"
+             class="card-img-top" alt="">
+      </div>
+      <div class="card-body">
+        <p style="font-size: 25px" class="card-text">Premier Village Resort</p>
+        <p> Địa chỉ: 64 Lê Mạnh Trinh, phường Phước Mỹ, quận Sơn Trà, thành phố Đà Nẵng</p>
+      </div>
+      <div class="card-footer">
+        <a href="#">
+          <button class="btn btn-warning">Sửa</button>
+        </a>
 
-      <a href="#" data-bs-toggle="modal"
-         data-bs-target="#deleteFacility">
-        <button class="btn btn-danger">Xóa</button>
-      </a>
+        <a href="#" data-bs-toggle="modal"
+           data-bs-target="#deleteFacility">
+          <button class="btn btn-danger">Xóa</button>
+        </a>
+      </div>
     </div>
-  </div>
-</div>
-<div style="margin-top: 40px" class="col-3 ">
-  <div class="card shadow" style="width: 100%">
+  </div>-->
+<div style="margin-top: 40px" class="col-3 " *ngFor="let items of facilities">
+  <div class="card shadow" style="width: 100%" >
     <div class="ratio ratio-16x9">
-      <img src="https://cdn.vntrip.vn/cam-nang/wp-content/uploads/2018/06/John-Boutique3.jpg"
+      <img src="{{items.img}}"
            class="card-img-top" alt="">
     </div>
-    <div class="card-body">
-      <p style="font-size: 25px" class="card-text">John Boutique Villa</p>
-      <p> Địa chỉ: 64 Lê Mạnh Trinh, phường Phước Mỹ, quận Sơn Trà, thành phố Đà Nẵng</p>
+    <div class="card-body" style="height: 150px">
+      <p style="font-size: 25px" class="card-text">{{items.name}}</p>
+      <p> Mô tả: {{items.description}}</p>
     </div>
-    <div class="card-footer">
-      <a href="#">
+    <div class="card-footer ">
+      <a href="#" class="p-4">
         <button class="btn btn-warning">Sửa</button>
       </a>
       <a href="#" data-bs-toggle="modal"
@@ -63,7 +63,7 @@
     </div>
   </div>
 </div>
-<div style="margin-top: 40px" class="col-3 ">
+<!--<div style="margin-top: 40px" class="col-3 ">
   <div class="card shadow" style="width: 100%">
     <div class="ratio ratio-16x9">
       <img src="https://cdn.vntrip.vn/cam-nang/wp-content/uploads/2018/06/Pullman-Danang-Beach-Resort-vntrip1-e1529555929861.jpg"
@@ -167,5 +167,5 @@
       </a>
     </div>
   </div>
-</div>
+</div>-->
 </div>
