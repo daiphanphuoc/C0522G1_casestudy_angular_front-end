@@ -1,9 +1,10 @@
+<h3 style="color: #6a1a21;text-align: center" class=" my-3">Thêm mới hợp đồng</h3>
 <div class="d-flex justify-content-center">
 
   <div class="form-group w-50 border border-2 border-success p-5 rounded"
         action="/contract/create"
         th:object="${contractDto}" method="POST" novalidate="novalidate">
-    <h3>Thêm mới hợp đồng</h3>
+
     <div class="form-group">
       <label for="nameNew" class="h6">Khách hàng:</label>
       <div class="input-group">

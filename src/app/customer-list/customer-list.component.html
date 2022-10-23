@@ -41,17 +41,18 @@
       </thead>
 
       <tbody>
-      <tr>
-        <td class="text-center">1</td>
+      <tr *ngFor="let item of customerList; index as i" >
+        <td class="text-center">{{i+1}}</td>
         <td class="view">
-          <span>Phan Phước Đại</span>
+          <span>{{item.name}}</span>
         </td>
-        <td>22/04/1990</td>
-        <td class="text-center">Nam</td>
-        <td>Quảng Nam</td>
-        <td>Member</td>
+        <td>{{item.birthday}}</td>
+        <td class="text-center" *ngIf="item.gender">Nam</td>
+        <td class="text-center" *ngIf="!item.gender">Nữ</td>
+        <td>{{item.address}}</td>
+        <td>{{item.customerType}}</td>
         <td class="text-center update">
-          <a href="#">
+          <a routerLink="/customer/update/{{item.id}}">
             <span class="fa-solid fa-user-pen text-primary h4 m-auto"></span>
           </a>
         </td>
@@ -62,7 +63,7 @@
           </a>
         </td>
       </tr>
-      <tr>
+      <!--<tr>
         <td class="text-center">2</td>
         <td class="view">
           <span>Phạm Đạt</span>
@@ -271,7 +272,7 @@
             <span class="fa-solid fa-person-circle-minus text-danger h4 m-auto"></span>
           </a>
         </td>
-      </tr>
+      </tr>-->
 
       </tbody>
     </table>

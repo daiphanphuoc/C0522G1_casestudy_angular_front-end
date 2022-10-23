@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {Title} from '@angular/platform-browser';
 
 @Component({
   selector: 'app-facility-new-form',
@@ -7,7 +8,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FacilityNewFormComponent implements OnInit {
 
-  constructor() { }
+  constructor(private titleService: Title) {
+    this.titleService.setTitle('Thêm mới dịch vụ');
+  }
 
   ngOnInit(): void {
   }

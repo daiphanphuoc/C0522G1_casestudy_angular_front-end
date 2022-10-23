@@ -1,18 +1,19 @@
 <div class="row">
-  <h3 class="text-center">THÊM MỚI KHÁCH HÀNG</h3>
+  <h3 style="color: #6a1a21;text-align: center" class=" my-3">THÊM MỚI KHÁCH HÀNG</h3>
   <div class="d-flex justify-content-center">
-    <form class="w-50 border border-2 border-success p-3 rounded"
-          action="/customer/update"
-          object="${customerDto}" method="POST" novalidate="novalidate">
+    <div class="w-50 border border-2 border-success p-3 rounded"
+         novalidate [formGroup]="formGroup">
 
       <div class="form-group">
         <label for="nameUpdate" class="h6">Tên khách hàng:</label>
-        <!--                        <p style="color: red" th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></p>-->
+        <p style="color: red" *ngIf="formGroup.controls.name.hasError('required')&&formGroup.controls.name.touched">Tên
+          không được để trống</p>
+        <p style="color: red" *ngIf="formGroup.controls.name.hasError('pattern')&&formGroup.controls.name.touched">Tên
+          không đúng định dạng</p>
         <div class="input-group">
 
           <input type="text" id="nameUpdate" class="form-control"
-                 placeholder="Nhập tên khách hàng.."
-                 value="*{name}"/>
+                 placeholder="Nhập tên khách hàng.." formControlName="name"/>
           <span class="input-group-text"><i
             class="fa-solid fa-person-circle-question"></i></span>
         </div>
@@ -20,25 +21,28 @@
 
       <div class="mt-3 form-group">
         <label for="dateOfBirthUpdate" class="h6">Ngày sinh:</label>
-        <!--<p style="color: red" th:if="${#fields.hasErrors('birthday')}"
-           th:errors="*{birthday}"></p>-->
-        <input type="date" id="dateOfBirthUpdate" class="form-control" value="*{birthday}"
-        />
+        <p style="color: red"
+           *ngIf="formGroup.controls.birthday.hasError('invalid18') &&formGroup.controls.birthday.touched">Tuổi không
+          được dưới 18</p>
+        <p style="color: red"
+           *ngIf="formGroup.controls.birthday.hasError('required') &&formGroup.controls.birthday.touched">Ngày sinh
+          không được để trống</p>
+        <input type="date" id="dateOfBirthUpdate" class="form-control" formControlName="birthday"/>
       </div>
 
       <div class="mt-3 form-group">
         <label class="h6">Giới tính:</label>
-        <!--  <p style="color: red" th:if="${#fields.hasErrors('sex')}"
-             th:errors="*{sex}"></p>-->
+        <p style="color: red" *ngIf="formGroup.controls.gender.hasError('required')&&formGroup.controls.gender.touched">
+          Không được để trống</p>
       </div>
       <div class="d-flex">
         <label class="d-block me-4">
-          <input type="radio"  value="1"/> Nam
+          <input type="radio" value="true" formControlName="gender"/> Nam
           <i class="fa-solid fa-mars"></i>
         </label>
 
         <label class="d-block me-4">
-          <input type="radio" value="0"/> Nữ
+          <input type="radio" value="false" formControlName="gender"/> Nữ
           <i class="fa-solid fa-venus"></i>
         </label>
 
@@ -47,36 +51,38 @@
 
       <div class="mt-3 form-group">
         <label for="idCardUpdate" class="h6">Số CMND/CCCD:</label>
-        <!--<p style="color: red" th:if="${#fields.hasErrors('idCitizen')}"
-           th:errors="*{idCitizen}"></p>
-        <p style="color: red" th:if="${duplicateIdCitizen}"
-           th:text="${duplicateIdCitizen}"></p>-->
+        <p style="color: red" *ngIf="formGroup.controls.idCard.hasError('required')&&formGroup.controls.idCard.touched">
+          Không được để trống</p>
+        <p style="color: red" *ngIf="formGroup.controls.idCard.hasError('pattern')&&formGroup.controls.idCard.touched">
+          Không đúng định dạng</p>
         <div class="input-group">
           <input type="text" id="idCardUpdate" class="form-control"
-                 placeholder="Nhập số CMND/CCCD.."
-                 value="*{idCitizen}"/>
+                 placeholder="Nhập số CMND/CCCD.." formControlName="idCard"/>
           <span class="input-group-text"><i class="fa-solid fa-id-card"></i></span>
         </div>
       </div>
 
       <div class="mt-3 form-group">
         <label for="phoneUpdate" class="h6">Số điện thoại:</label>
-        <!--<p style="color: red" th:if="${#fields.hasErrors('phone')}"
-           th:errors="*{phone}"></p>-->
+        <p style="color: red" *ngIf="formGroup.controls.phone.hasError('required')&&formGroup.controls.phone.touched">
+          Không được để trống</p>
+        <p style="color: red" *ngIf="formGroup.controls.phone.hasError('pattern')&&formGroup.controls.phone.touched">
+          Không đúng định dạng</p>
         <div class="input-group">
-          <input type="text" id="phoneUpdate" class="form-control" placeholder="Nhập SĐT.."
-                 value="*{phone}"/>
+          <input type="text" id="phoneUpdate" class="form-control" placeholder="Nhập SĐT.." formControlName="phone"/>
           <span class="input-group-text"><i class="fa-solid fa-square-phone"></i></span>
         </div>
       </div>
 
       <div class="mt-3 form-group">
         <label for="emailUpdate" class="h6">Email:</label>
-        <!--  <p style="color: red" th:if="${#fields.hasErrors('email')}"
-             th:errors="*{email}"></p>-->
+        <p style="color: red" *ngIf="formGroup.controls.email.hasError('required')&&formGroup.controls.email.touched">
+          Không được để trống</p>
+        <p style="color: red" *ngIf="formGroup.controls.email.hasError('email')&&formGroup.controls.email.touched">
+          Không đúng định dạng</p>
+
         <div class="input-group">
-          <input type="text" id="emailUpdate" class="form-control" placeholder="Nhập email.."
-                 value="*{email}"/>
+          <input type="text" id="emailUpdate" class="form-control" placeholder="Nhập email.." formControlName="email"/>
           <span class="input-group-text"><i
             class="fa-solid fa-envelope-circle-check"></i></span>
         </div>
@@ -84,11 +90,16 @@
 
       <div class="mt-3 form-group">
         <label for="addressUpdate" class="h6">Địa chỉ:</label>
-        <!-- <p style="color: red" th:if="${#fields.hasErrors('address')}"
-            th:errors="*{address}"></p>-->
+        <p style="color: red"
+           *ngIf="formGroup.controls.address.hasError('required')&&formGroup.controls.address.touched">Không được để
+          trống</p>
+        <p style="color: red"
+           *ngIf="formGroup.controls.address.hasError('pattern')&&formGroup.controls.address.touched">Không đúng định
+          dạng</p>
+
         <div class="input-group">
           <input type="text" id="addressUpdate" class="form-control"
-                 placeholder="Nhập địa chỉ.."/>
+                 placeholder="Nhập địa chỉ.." formControlName="address"/>
           <span class="input-group-text"><i
             class="fa-solid fa-map-location-dot"></i></span>
         </div>
@@ -96,8 +107,11 @@
 
       <div class="mt-3 form-group">
         <label class="h6" for="customerTypeUpdate">Loại khách:</label>
+        <p style="color: red"
+           *ngIf="formGroup.controls.customerType.hasError('required')&&formGroup.controls.customerType.touched">Không
+          được để trống</p>
         <div class="input-group">
-          <select id="customerTypeUpdate" class="form-select" >
+          <select id="customerTypeUpdate" class="form-select" formControlName="customerType">
             <option>Member</option>
             <option>Siver</option>
           </select>
@@ -106,11 +120,12 @@
       </div>
 
       <div class="mt-3 text-center">
-        <button class="btn btn-info btn-outline-success btn-sm border border-2 border-success text-dark">
+        <button class="btn btn-info btn-outline-success btn-sm border border-2 border-success text-dark"
+                (click)="giveFormValue()">
           Lưu <i class="fa-solid fa-floppy-disk"></i>
         </button>
       </div>
-    </form>
+    </div>
   </div>
 
 </div>

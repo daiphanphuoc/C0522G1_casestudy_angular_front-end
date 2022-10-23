@@ -1,24 +1,26 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import {BrowserModule} from '@angular/platform-browser';
+import {NgModule} from '@angular/core';
 
-import { AppComponent } from './app.component';
-import { HeaderComponent } from './header/header.component';
-import { FooterComponent } from './footer/footer.component';
-import { NavbarComponent } from './navbar/navbar.component';
-import { BodyIndexComponent } from './body-index/body-index.component';
-import { RightComponent } from './right/right.component';
-import { FacilityListComponent } from './facility-list/facility-list.component';
-import { FacilityUpdateComponent } from './facility-update/facility-update.component';
-import { FacilityNewFormComponent } from './facility-new-form/facility-new-form.component';
-import { FacilityNewModalComponent } from './facility-new-modal/facility-new-modal.component';
-import { MessageSuccessModalComponent } from './message-success-modal/message-success-modal.component';
-import { MessageFailModalComponent } from './message-fail-modal/message-fail-modal.component';
-import { CustomerNewComponent } from './customer-new/customer-new.component';
-import { CustomerListComponent } from './customer-list/customer-list.component';
-import { CustomerUpdateComponent } from './customer-update/customer-update.component';
-import {FormsModule} from '@angular/forms';
-import { ContractNewComponent } from './contract-new/contract-new.component';
-import { ContractListComponent } from './contract-list/contract-list.component';
+import {AppComponent} from './app.component';
+import {HeaderComponent} from './header/header.component';
+import {FooterComponent} from './footer/footer.component';
+import {NavbarComponent} from './navbar/navbar.component';
+import {BodyIndexComponent} from './body-index/body-index.component';
+import {RightComponent} from './right/right.component';
+import {FacilityListComponent} from './facility-list/facility-list.component';
+import {FacilityUpdateComponent} from './facility-update/facility-update.component';
+import {FacilityNewFormComponent} from './facility-new-form/facility-new-form.component';
+import {FacilityNewModalComponent} from './facility-new-modal/facility-new-modal.component';
+import {MessageSuccessModalComponent} from './message-success-modal/message-success-modal.component';
+import {MessageFailModalComponent} from './message-fail-modal/message-fail-modal.component';
+import {CustomerNewComponent} from './customer-new/customer-new.component';
+import {CustomerListComponent} from './customer-list/customer-list.component';
+import {CustomerUpdateComponent} from './customer-update/customer-update.component';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {ContractNewComponent} from './contract-new/contract-new.component';
+import {ContractListComponent} from './contract-list/contract-list.component';
+import {RouterModule} from '@angular/router';
+import {FuramaRoutingModule} from './furama-routing.module';
 
 @NgModule({
   declarations: [
@@ -42,9 +44,13 @@ import { ContractListComponent } from './contract-list/contract-list.component';
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule,
+    RouterModule,
+    FuramaRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}
