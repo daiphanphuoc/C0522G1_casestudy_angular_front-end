@@ -1,0 +1,218 @@
+
+<div class="row d-flex my-2 mx-1">
+  <h3 style="color: #6a1a21;text-align: center" class="my-3"> DANH SÁCH CƠ SỞ DỊCH VỤ</h3>
+  <div style="margin-top: 40px" class="col-3 " *ngFor="let item of facilities">
+    <div class="card shadow" style="width: 100%">
+      <div class="ratio ratio-16x9">
+        <img src="{{item.img}}"
+             class="card-img-top" alt="">
+      </div>
+      <div class="card-body" style="height: 150px">
+        <p style="font-size: 25px" class="card-text">{{item.name}}</p>
+        <p> Mô tả: {{item.description}}</p>
+      </div>
+      <div class="card-footer ">
+        <a class="p-5" routerLink="/facility/update/{{item.id}}">
+          <span class="fa-solid fa-user-pen text-primary h4 m-auto"></span>
+        </a>
+        <a class="p-5" data-bs-toggle="modal" data-bs-target="#deleteFacility">
+          <span class="fa-solid fa-person-circle-minus text-danger h4 m-auto"></span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!--
+    <div style="margin-top: 40px" class="col-3 ">
+    <div class="card shadow" style="width: 100%">
+      <div class="ratio ratio-16x9">
+        <img src="https://cdn.vntrip.vn/cam-nang/wp-content/uploads/2018/06/the-ocean-villas-da-nang-vntrip2-e1529553936964.jpg"
+             class="card-img-top" alt="hinh_anh/hinh 6.1.jpg">
+      </div>
+      <div class="card-body">
+        <p style="font-size: 25px" class="card-text">Sun Peninsula Resort</p>
+        <p> Địa chỉ: 64 Lê Mạnh Trinh, phường Phước Mỹ, quận Sơn Trà, thành phố Đà Nẵng</p>
+      </div>
+      <div class="card-footer">
+        <a href="#">
+          <button class="btn btn-warning">Sửa</button>
+        </a>
+        <a href="#" data-bs-toggle="modal"
+           data-bs-target="#deleteFacility">
+          <button class="btn btn-danger">Xóa</button>
+        </a>
+      </div>
+    </div>
+  </div>
+  <div style="margin-top: 40px" class="col-3 ">
+    <div class="card shadow" style="width: 100%">
+      <div class="ratio ratio-16x9">
+        <img src="https://cdn.vntrip.vn/cam-nang/wp-content/uploads/2018/06/khu-nghi-duong-intercontinental-danang-sun-peninsula-vntrip1-e1529553680391.jpg"
+             class="card-img-top" alt="">
+      </div>
+      <div class="card-body">
+        <p style="font-size: 25px" class="card-text">Premier Village Resort</p>
+        <p> Địa chỉ: 64 Lê Mạnh Trinh, phường Phước Mỹ, quận Sơn Trà, thành phố Đà Nẵng</p>
+      </div>
+      <div class="card-footer">
+        <a href="#">
+          <button class="btn btn-warning">Sửa</button>
+        </a>
+
+        <a href="#" data-bs-toggle="modal"
+           data-bs-target="#deleteFacility">
+          <button class="btn btn-danger">Xóa</button>
+        </a>
+      </div>
+    </div>
+  </div>
+  <div style="margin-top: 40px" class="col-3 ">
+    <div class="card shadow" style="width: 100%">
+      <div class="ratio ratio-16x9">
+        <img src="https://cdn.vntrip.vn/cam-nang/wp-content/uploads/2018/06/Pullman-Danang-Beach-Resort-vntrip1-e1529555929861.jpg"
+             class="card-img-top" alt="">
+      </div>
+      <div class="card-body">
+        <p style="font-size: 25px" class="card-text">Hyatt Regency Resort </p>
+        <p> Địa chỉ: 64 Lê Mạnh Trinh, phường Phước Mỹ, quận Sơn Trà, thành phố Đà Nẵng</p>
+      </div>
+      <div class="card-footer">
+        <a href="#">
+          <button class="btn btn-warning">Sửa</button>
+        </a>
+        <a href="#" data-bs-toggle="modal"
+           data-bs-target="#deleteFacility">
+          <button class="btn btn-danger">Xóa</button>
+        </a>
+      </div>
+    </div>
+  </div>
+  <div style="margin-top: 40px" class="col-3 ">
+    <div class="card shadow" style="width: 100%">
+      <div class="ratio ratio-16x9">
+        <img src="https://cdn.vntrip.vn/cam-nang/wp-content/uploads/2018/06/furama-resort-da-nang-vntrip2-e1529555348838.jpg"
+             class="card-img-top" alt="">
+      </div>
+      <div class="card-body">
+        <p style="font-size: 25px" class="card-text">Furama Resort Danang</p>
+        <p> Địa chỉ: 64 Lê Mạnh Trinh, phường Phước Mỹ, quận Sơn Trà, thành phố Đà Nẵng</p>
+      </div>
+      <div class="card-footer">
+        <a href="#">
+          <button class="btn btn-warning">Sửa</button>
+        </a>
+        <a href="#" data-bs-toggle="modal"
+           data-bs-target="#deleteFacility">
+          <button class="btn btn-danger">Xóa</button>
+        </a>
+      </div>
+    </div>
+  </div>
+  <div style="margin-top: 40px" class="col-3 ">
+    <div class="card shadow" style="width: 100%">
+      <div class="ratio ratio-16x9">
+        <img src="https://cdn.vntrip.vn/cam-nang/wp-content/uploads/2018/06/Holiday-Beach-Danang-Hotel-Resort-vntrip2-e1529555452681.jpg"
+             class="card-img-top" alt="">
+      </div>
+      <div class="card-body">
+        <p style="font-size: 25px" class="card-text">Holiday Beach Hotel</p>
+        <p> Địa chỉ: 64 Lê Mạnh Trinh, phường Phước Mỹ, quận Sơn Trà, thành phố Đà Nẵng</p>
+      </div>
+      <div class="card-footer">
+        <a href="#">
+          <button class="btn btn-warning">Sửa</button>
+        </a>
+        <a href="#" data-bs-toggle="modal"
+           data-bs-target="#deleteFacility">
+          <button class="btn btn-danger">Xóa</button>
+        </a>
+      </div>
+    </div>
+  </div>
+  <div style="margin-top: 40px" class="col-3 ">
+    <div class="card shadow" style="width: 100%">
+      <div class="ratio ratio-16x9">
+        <img src="https://cdn.vntrip.vn/cam-nang/wp-content/uploads/2018/06/naman-retreat-resort-da-nang-vntrip1-e1529554055411.jpg"
+             class="card-img-top" alt="">
+      </div>
+      <div class="card-body">
+        <p style="font-size: 25px" class="card-text">Vinpearl Resort & Villas</p>
+        <p> Địa chỉ: 64 Lê Mạnh Trinh, phường Phước Mỹ, quận Sơn Trà, thành phố Đà Nẵng</p>
+      </div>
+      <div class="card-footer">
+        <a href="#">
+          <button class="btn btn-warning">Sửa</button>
+        </a>
+        <a href="#" data-bs-toggle="modal"
+           data-bs-target="#deleteFacility">
+          <button class="btn btn-danger">Xóa</button>
+        </a>
+      </div>
+    </div>
+  </div>
+  <div style="margin-top: 40px" class="col-3 ">
+    <div class="card shadow" style="width: 100%">
+      <div class="ratio ratio-16x9">
+        <img src="https://cdn.vntrip.vn/cam-nang/wp-content/uploads/2018/06/Pullman-Danang-Beach-Resort-vntrip2-e1529555940695.jpg"
+             class="card-img-top" alt="">
+      </div>
+      <div class="card-body">
+        <p style="font-size: 25px" class="card-text">Pullman Beach Resort</p>
+        <p> Địa chỉ: 64 Lê Mạnh Trinh, phường Phước Mỹ, quận Sơn Trà, thành phố Đà Nẵng</p>
+      </div>
+      <div class="card-footer">
+        <a href="#">
+          <button class="btn btn-warning">Sửa</button>
+        </a>
+        <a href="#" data-bs-toggle="modal"
+           data-bs-target="#deleteFacility">
+          <button class="btn btn-danger">Xóa</button>
+        </a>
+      </div>
+    </div>
+  </div>-->
+</div>
+<nav aria-label="..." class="justify-content-center d-flex">
+  <ul class="pagination">
+    <li class="page-item">
+      <a class="page-link" (click)="previous()" *ngIf="page > 1">&laquo; Trang trước</a>
+    </li>
+    <li class="page-item disabled" *ngIf="page <= 1">
+      <a class="page-link">&laquo;</a>
+    </li>
+
+    <li class="page-item"><a class="page-link disabled" href="" [text]="page + ' / ' + totalPage"></a>
+    </li>
+
+    <li class="page-item">
+      <a class="page-link" (click)="next()" *ngIf="page < totalPage">Trang sau &raquo;</a>
+    </li>
+    <li class="page-item disabled" *ngIf="page >= totalPage">
+      <a class="page-link">&raquo;</a>
+    </li>
+  </ul>
+</nav>
+<!--    modal delete-->
+<div class="modal fade" id="deleteFacility" tabindex="-1" aria-labelledby="exampleModalLabel1"
+     aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title" id="exampleModalLabel1">Bạn chắc chắn muốn xóa?</h4>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+
+      <form>
+        <div class="modal-body">
+          <span class="h6">Dịch vụ:</span><strong id="nameDelete" class="text-danger ps-2"></strong>
+          <input type="hidden" name="id" id="idDelete"/>
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="submit" class="btn btn-danger" value="delete">Delete</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

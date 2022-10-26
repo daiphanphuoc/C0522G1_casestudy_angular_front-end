@@ -172,4 +172,12 @@ export class FacilityService {
       return facility.id !== id;
     });
   }
+
+  findAll() {
+    return this.getAll();
+  }
+
+  saveFacility(facility: Facility) {
+    this._facilities.push(facility);
+  }
 }

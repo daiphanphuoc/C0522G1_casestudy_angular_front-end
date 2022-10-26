@@ -1,5 +1,5 @@
 <div>
-  <h3 style="color: #6a1a21;text-align: center" class=" my-3">Danh sách khách hàng</h3>
+  <h3 style="color: #6a1a21;text-align: center" class=" my-3">DANH SÁCH KHÁCH HÀNG</h3>
   <div class="row my-3">
 
     <!-- Button trigger modal  create-->
@@ -25,7 +25,7 @@
     </fieldset>
 
   </div>
-  <div class="row my-2">
+  <div class="row my-2 mx-1">
     <table class="table table-striped table-bordered border border-3 border-secondary" id="table">
       <thead class="text-center bg-info">
       <tr>
@@ -57,8 +57,7 @@
           </a>
         </td>
         <td class="text-center delete">
-          <a onclick=deleteCustomer()
-             data-bs-toggle="modal" data-bs-target="#deleteBackdrop">
+          <a data-bs-toggle="modal" data-bs-target="#deleteCustomer">
             <span class="fa-solid fa-person-circle-minus text-danger h4 m-auto"></span>
           </a>
         </td>
@@ -276,5 +275,52 @@
 
       </tbody>
     </table>
+  </div>
+
+  <nav aria-label="..." class="justify-content-center d-flex">
+    <ul class="pagination">
+      <li class="page-item">
+        <a class="page-link" (click)="previous()" *ngIf="page > 1">&laquo; Trang trước</a>
+      </li>
+      <li class="page-item disabled" *ngIf="page <= 1">
+        <a class="page-link">&laquo;</a>
+      </li>
+
+      <li class="page-item"><a class="page-link disabled" href="" [text]="page + ' / ' + totalPage"></a>
+      </li>
+
+      <li class="page-item">
+        <a class="page-link" (click)="next()" *ngIf="page < totalPage">Trang sau &raquo;</a>
+      </li>
+      <li class="page-item disabled" *ngIf="page >= totalPage">
+        <a class="page-link">&raquo;</a>
+      </li>
+    </ul>
+  </nav>
+</div>
+
+
+<!--    modal delete-->
+<div class="modal fade" id="deleteCustomer" tabindex="-1" aria-labelledby="exampleModalLabel1"
+     aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title" id="exampleModalLabel1">Bạn chắc chắn muốn xóa?</h4>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+
+      <form>
+        <div class="modal-body">
+          <span class="h6">Khách hàng:</span><strong id="nameDelete" class="text-danger ps-2"></strong>
+          <input type="hidden" name="id" id="idDelete"/>
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="submit" class="btn btn-danger" value="delete">Delete</button>
+        </div>
+      </form>
+    </div>
   </div>
 </div>

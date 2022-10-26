@@ -84,4 +84,8 @@ export class ContractService {
   getAll(): Contract[] {
     return this.contractList;
   }
+
+  saveContract(contract: Contract) {
+    this.contractList.push(contract);
+  }
 }

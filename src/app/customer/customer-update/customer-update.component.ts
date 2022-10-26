@@ -1,34 +1,29 @@
 import {Component, OnInit} from '@angular/core';
-import {AbstractControl, FormControl, FormGroup, Validators} from '@angular/forms';
-import {CustomerService} from '../service/customer.service';
 import {Title} from '@angular/platform-browser';
+import {AbstractControl, FormControl, FormGroup, Validators} from '@angular/forms';
+import {Customer} from '../../model/customer';
+import {CustomerService} from '../../service/customer.service';
+import {ActivatedRoute} from '@angular/router';
 
 @Component({
-  selector: 'app-customer-new',
-  templateUrl: './customer-new.component.html',
-  styleUrls: ['./customer-new.component.css']
+  selector: 'app-customer-update',
+  templateUrl: './customer-update.component.html',
+  styleUrls: ['./customer-update.component.css']
 })
-export class CustomerNewComponent implements OnInit {
-  formGroup: FormGroup;
-
-  constructor(private  customerService: CustomerService,
-              private titleService: Title) {
-    this.titleService.setTitle('Thêm mới khách hàng');
-  }
+export class CustomerUpdateComponent implements OnInit {
+  customer: Customer;
 
   customerTypeList: string[] = ['Diamond', 'Platinium', 'Gold', 'Silver', 'Member'];
+  formGroup: FormGroup;
 
-  ngOnInit(): void {
-    /*id: number;
-  name: string;
-  birthday: string;
-  gender: boolean;
-  idCard: string;
-  phone: string;
-  email: string;
-  address: string;
-  customerType: string;*/
+  constructor(private titleService: Title,
+              private customerService: CustomerService,
+              private activatedRoute: ActivatedRoute) {
+    this.titleService.setTitle('Cập nhật khách hàng');
+    const id = Number(this.activatedRoute.snapshot.params.id);
+    this.customer = this.customerService.findById(id);
     this.formGroup = new FormGroup({
+      id: new FormControl(),
       name: new FormControl('', [Validators.required]),
       // tslint:disable-next-line:max-line-length
       /*name:    new FormControl('', [Validators.required, Validators.pattern('^([\\p{Lu}][\\p{Ll}]{1,8})(\\s([\\p{Lu}]|[\\p{Lu}][\\p{Ll}]{1,10})){0,5}$')]),*/
@@ -40,6 +35,11 @@ export class CustomerNewComponent implements OnInit {
       address: new FormControl('', [Validators.required]),
       customerType: new FormControl('', [Validators.required])
     });
+    this.formGroup.setValue(this.customer);
+  }
+
+
+  ngOnInit(): void {
   }
 
   private checkAge(abstractControl: AbstractControl): any {

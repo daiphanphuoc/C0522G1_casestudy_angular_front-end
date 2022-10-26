@@ -107,4 +107,8 @@ export class CustomerService {
   findById(id: number) {
     return this._customerList.find(c => c.id === id);
   }
+
+  findAll() {
+    return this._customerList;
+  }
 }
